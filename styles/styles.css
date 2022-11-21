@@ -244,6 +244,7 @@ div#menu>div:nth-of-type(2)>div>ul {
     flex-direction: row;
     gap: 1rem;
     list-style-type: none;
+    flex: 2;
 }
 
 div#menu>div:nth-of-type(2)>div>ul>li div {
@@ -269,6 +270,12 @@ div#menu>div:nth-of-type(2)>div>ul>li:nth-of-type(3) div {
     margin-top: 0.2rem;
     -webkit-mask: url(../assets/static/ionicons/logo-twitter.svg) no-repeat center;
     mask: url(../assets/static/ionicons/logo-twitter.svg) no-repeat center;
+}
+
+div#menu>div:nth-of-type(2)>div>ul>li:nth-of-type(4) div {
+    margin-top: 0.2rem;
+    -webkit-mask: url(../assets/static/ionicons/whatsapp.svg) no-repeat center;
+    mask: url(../assets/static/ionicons/whatsapp.svg) no-repeat center;
 }
 
 #darkModeToggle {
@@ -779,6 +786,12 @@ section:nth-of-type(4) ul>li:nth-of-type(3) div {
     margin-top: 0.2rem;
     -webkit-mask: url(../assets/static/ionicons/logo-twitter.svg) no-repeat center;
     mask: url(../assets/static/ionicons/logo-twitter.svg) no-repeat center;
+}
+
+section:nth-of-type(4) ul>li:nth-of-type(4) div {
+    margin-top: 0.2rem;
+    -webkit-mask: url(../assets/static/ionicons/whatsapp.svg) no-repeat center;
+    mask: url(../assets/static/ionicons/whatsapp.svg) no-repeat center;
 }
 
 footer {

@@ -203,25 +203,27 @@ menuContact.addEventListener('click', function() {
 
 //!Hover Styles
 //? Menu Section > Email hover
-const menuEmail = document.querySelector('div#menu>div:nth-of-type(2) a')
-menuEmail.addEventListener('mouseenter', (event) => {
-    if (menuEmail.classList.contains('light')) {
-        menuEmail.classList.toggle('light')
-        menuEmail.classList.toggle('dark')
-    } else {
-        menuEmail.classList.toggle('light')
-        menuEmail.classList.toggle('dark')
-    }
-});
-menuEmail.addEventListener('mouseleave', (event) => {
-    if (menuEmail.classList.contains('light')) {
-        menuEmail.classList.toggle('light')
-        menuEmail.classList.toggle('dark')
-    } else {
-        menuEmail.classList.toggle('light')
-        menuEmail.classList.toggle('dark')
-    }
-})
+const menuTextLinks = document.querySelectorAll('div#menu>div:nth-of-type(2) a')
+for (const link of menuTextLinks) {
+    link.addEventListener('mouseenter', (event) => {
+        if (link.classList.contains('light')) {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        } else {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        }
+    });
+    link.addEventListener('mouseleave', (event) => {
+        if (link.classList.contains('light')) {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        } else {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        }
+    })    
+}
 //? Menu Section > icons hover
 const menuIcons = document.querySelectorAll('div#menu>div:nth-of-type(2)>div>ul>li div')
 menuIcons.forEach(icon => {
@@ -246,25 +248,27 @@ menuIcons.forEach(icon => {
 })
 
 //? Last Section > Email hover
-const footerEmail = document.querySelector('section:nth-of-type(4)>div>p>a')
-footerEmail.addEventListener('mouseenter', (event) => {
-    if (footerEmail.classList.contains('light')) {
-        footerEmail.classList.toggle('light')
-        footerEmail.classList.toggle('dark')
-    } else {
-        footerEmail.classList.toggle('light')
-        footerEmail.classList.toggle('dark')
-    }
-});
-footerEmail.addEventListener('mouseleave', (event) => {
-    if (footerEmail.classList.contains('light')) {
-        footerEmail.classList.toggle('light')
-        footerEmail.classList.toggle('dark')
-    } else {
-        footerEmail.classList.toggle('light')
-        footerEmail.classList.toggle('dark')
-    }
-})
+const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
+for (const link of contactLinks) {
+    link.addEventListener('mouseenter', (event) => {
+        if (link.classList.contains('light')) {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        } else {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        }
+    });
+    link.addEventListener('mouseleave', (event) => {
+        if (link.classList.contains('light')) {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        } else {
+            link.classList.toggle('light')
+            link.classList.toggle('dark')
+        }
+    })    
+}
 //? Last Section > icons hover
 const footerIcons = document.querySelectorAll('section:nth-of-type(4) ul>li div')
 footerIcons.forEach(icon => {
