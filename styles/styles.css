@@ -312,6 +312,10 @@ div#menu>div:nth-of-type(2)>div>ul>li:nth-of-type(4) div {
     width: 2rem;
     position: absolute;
 }
+#languageToggle img:hover {
+    transform: rotate(360deg) scale(1.2);
+    transition-duration: 1.2s;
+}
 #languageToggle a:nth-of-type(1)>img {
     top: -120%;
 }

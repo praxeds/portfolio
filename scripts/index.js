@@ -100,12 +100,22 @@ const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
 
 
 */
-languageToggle.addEventListener('click', function() {
+languageToggle.addEventListener('click', function(e) {
+    e.stopPropagation()
     for (let flag of languageOptions) {
         toggleClass(flag, 'noDisplay')
     }
 })
 
+window.addEventListener('click', function(e){   
+    if (menu.classList.contains('activeMenu')) {
+        for (let flag of languageOptions) {
+            if (e.target !== flag && !flag.classList.contains('noDisplay')){
+                toggleClass(flag, 'noDisplay')
+            }            
+        }
+    }
+  });
 /*
 
 
