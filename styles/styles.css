@@ -376,14 +376,14 @@ nav {
     font-weight: 100;
 }
 
-#navLogo {
+nav > span {
     -webkit-transition: all ease .7s;
     -o-transition: all ease .7s;
     transition: all ease .7s;
     cursor: pointer;
 }
 
-#navToggle {
+nav > div {
     position: relative;
     width: 3rem;
     height: 3rem;
@@ -404,7 +404,7 @@ nav {
     cursor: pointer;
 }
 
-.toggleDiv {
+nav > div > div {
     width: 2.5rem;
     height: 0.2rem;
     -webkit-transition: all ease .7s;
@@ -817,13 +817,13 @@ footer p {
         font-size: 5rem;
     }
 
-    #navToggle {
+    nav > div {
         width: 5rem;
         height: 5rem;
         gap: 1.2rem;
     }
 
-    .toggleDiv {
+    nav > div > div {
         width: 4rem;
         height: 0.25rem;
     }
@@ -1030,13 +1030,13 @@ footer p {
         font-size: 3rem;
     }
 
-    #navToggle {
+    nav > div {
         width: 3rem;
         height: 3rem;
         gap: 0.7rem;
     }
 
-    .toggleDiv {
+    nav > div > div {
         width: 2.5rem;
         height: 0.2rem;
     }

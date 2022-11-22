@@ -9,23 +9,20 @@ new fullpage('#fullpage', {
     controlArrows: false,
     licenseKey: 'gplv3-license',
     credits: { enabled: false, label: 'Made with fullPage.js', position: 'right' },
-
     onLeave: function (origin, destination, direction, trigger) {
-        let leavingSection = this;
-
         //!Nav color change on footer Event
         if (origin.index == 2 && direction == 'down') {
             if (darkModeToggle.classList.contains('lightModeToggle')) {
                 navLogo.classList.add('light')
                 navLogo.classList.remove('dark')
-                for (let div of toggleDiv) {
+                for (let div of toggleDivs) {
                     div.classList.add('bgLight')
                     div.classList.remove('bgDark')
                 }
             } else if (darkModeToggle.classList.contains('darkModeToggle')) {
                 navLogo.classList.add('dark')
                 navLogo.classList.remove('light')
-                for (let div of toggleDiv) {
+                for (let div of toggleDivs) {
                     div.classList.add('bgDark')
                     div.classList.remove('bgLight')
                 }
@@ -35,14 +32,14 @@ new fullpage('#fullpage', {
             if (darkModeToggle.classList.contains('lightModeToggle')) {
                 navLogo.classList.add('dark')
                 navLogo.classList.remove('light')
-                for (let div of toggleDiv) {
+                for (let div of toggleDivs) {
                     div.classList.add('bgDark')
                     div.classList.remove('bgLight')
                 }
             } else if (darkModeToggle.classList.contains('darkModeToggle')) {
                 navLogo.classList.add('light')
                 navLogo.classList.remove('dark')
-                for (let div of toggleDiv) {
+                for (let div of toggleDivs) {
                     div.classList.add('bgLight')
                     div.classList.remove('bgDark')
                 }
@@ -52,65 +49,18 @@ new fullpage('#fullpage', {
 });
 
 
-/*
+//!Variables//
 
+const nav = document.getElementsByTagName('nav')
+const navLogo = document.querySelector('nav>span')
+const navToggle = document.querySelector('nav>div')
+const toggleDivs = document.querySelectorAll('nav>div>div')
 
-!Functions
-
-
-*/
-function menuAnimation() {
-    //?Menu Toggle Position
-    toggleDiv[0].classList.toggle('activeNavToggle2')
-    toggleDiv[1].classList.toggle('activeNavToggle1')
-    toggleDiv[2].classList.toggle('activeNavToggle2')
-    menu.classList.toggle('activeMenu')
-    //?Menu Toggle Color
-    for (let div of toggleDiv) {
-        div.classList.toggle('bgDark')
-        div.classList.toggle('bgAccent')
-    }
-}
-
-
-/*
-
-
-!Events
-
-
-*/
-
-const nav = document.getElementById('nav')
-const navLogo = document.getElementById('navLogo')
-const navToggle = document.getElementById('navToggle')
-const toggleDiv = document.getElementsByClassName('toggleDiv')
-
-//!Back to Top
 const menu = document.getElementById('menu')
-navLogo.addEventListener('click', function() {
-    if (menu.classList.contains('activeMenu')) {
-        menuAnimation()
-    }
-})
-
-navLogo.addEventListener('click', backToTop)
-function backToTop() {
-    fullpage_api.moveTo(1)
-}
-
-
-//!Opening the menu
-navToggle.addEventListener('click', menuAnimation)
-
-//!Closing the menu
 const menuLinks = document.querySelectorAll('#menu>div:nth-of-type(1)>ul a')
-menuLinks.forEach(link => {
-    link.addEventListener('click', menuAnimation)
-})
+const contactMenuLink = document.getElementById('contactMenuLink')
 
 
-//!Dark Mode
 const darkModeBtn = document.getElementById('darkModeBtn')
 const darkModeToggle = document.getElementById('darkModeToggle')
 const darkModeBtnIcon = document.getElementById('darkModeBtnIcon')
@@ -135,6 +85,68 @@ const bgAccentElements = document.querySelectorAll('.bgAccent')
 
 //? SlideNav goes to var(--bg-light-color)
 const slideNav = document.querySelectorAll('.fp-slidesNav ul li a span')
+
+const menuTextLinks = document.querySelectorAll('div#menu>div:nth-of-type(2) a')
+const menuIcons = document.querySelectorAll('div#menu>div:nth-of-type(2)>div>ul>li div')
+const footerIcons = document.querySelectorAll('section:nth-of-type(4) ul>li div')
+const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
+
+
+
+/*
+
+
+!Functions
+
+
+*/
+function menuAnimation() {
+    //?Menu Toggle Position
+    toggleDivs[0].classList.toggle('activeNavToggle2')
+    toggleDivs[1].classList.toggle('activeNavToggle1')
+    toggleDivs[2].classList.toggle('activeNavToggle2')
+    menu.classList.toggle('activeMenu')
+    //?Menu Toggle Color
+    for (let div of toggleDivs) {
+        div.classList.toggle('bgDark')
+        div.classList.toggle('bgAccent')
+    }
+}
+
+
+/*
+
+
+!Events
+
+
+*/
+
+
+//!Back to Top
+navLogo.addEventListener('click', function() {
+    if (menu.classList.contains('activeMenu')) {
+        menuAnimation()
+    }
+})
+
+navLogo.addEventListener('click', backToTop)
+function backToTop() {
+    fullpage_api.moveTo(1)
+}
+
+
+//!Opening the menu
+navToggle.addEventListener('click', menuAnimation)
+
+//!Closing the menu
+menuLinks.forEach(link => {
+    link.addEventListener('click', menuAnimation)
+})
+
+
+//!Dark Mode
+
 
 darkModeToggle.addEventListener('click', darkModeEvent)
 function darkModeEvent() {
@@ -182,19 +194,18 @@ function darkModeEvent() {
 }
 
 //!Clicking in the contact link in the menu makes the nav change color since it takes the user to the footer
-const menuContact = document.getElementById('contactAnchor')
-menuContact.addEventListener('click', function() {
+contactMenuLink.addEventListener('click', function() {
     if (darkModeToggle.classList.contains('lightModeToggle')) {
         navLogo.classList.add('light')
         navLogo.classList.remove('dark')
-        for (let div of toggleDiv) {
+        for (let div of toggleDivs) {
             div.classList.add('bgLight')
             div.classList.remove('bgDark')
         }
     } else if (darkModeToggle.classList.contains('darkModeToggle')) {
         navLogo.classList.add('dark')
         navLogo.classList.remove('light')
-        for (let div of toggleDiv) {
+        for (let div of toggleDivs) {
             div.classList.add('bgDark')
             div.classList.remove('bgLight')
         }
@@ -203,7 +214,6 @@ menuContact.addEventListener('click', function() {
 
 //!Hover Styles
 //? Menu Section > Email hover
-const menuTextLinks = document.querySelectorAll('div#menu>div:nth-of-type(2) a')
 for (const link of menuTextLinks) {
     link.addEventListener('mouseenter', (event) => {
         if (link.classList.contains('light')) {
@@ -225,7 +235,6 @@ for (const link of menuTextLinks) {
     })    
 }
 //? Menu Section > icons hover
-const menuIcons = document.querySelectorAll('div#menu>div:nth-of-type(2)>div>ul>li div')
 menuIcons.forEach(icon => {
     icon.addEventListener('mouseenter', (e) => {
         if (icon.classList.contains('bgLight')) {
@@ -248,7 +257,6 @@ menuIcons.forEach(icon => {
 })
 
 //? Last Section > Email hover
-const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
 for (const link of contactLinks) {
     link.addEventListener('mouseenter', (event) => {
         if (link.classList.contains('light')) {
@@ -270,7 +278,6 @@ for (const link of contactLinks) {
     })    
 }
 //? Last Section > icons hover
-const footerIcons = document.querySelectorAll('section:nth-of-type(4) ul>li div')
 footerIcons.forEach(icon => {
     icon.addEventListener('mouseenter', (e) => {
         if (icon.classList.contains('bgLight')) {
