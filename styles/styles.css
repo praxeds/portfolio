@@ -56,6 +56,10 @@
     color: var(--bg-dark-color);
 }
 
+.noDisplay {
+    display: none;
+}
+
 /*!Colors*/
 :root {
     --bg-light-color: #fff;
@@ -277,6 +281,44 @@ div#menu>div:nth-of-type(2)>div>ul>li:nth-of-type(4) div {
     -webkit-mask: url(../assets/static/ionicons/whatsapp.svg) no-repeat center;
     mask: url(../assets/static/ionicons/whatsapp.svg) no-repeat center;
 }
+
+#languageToggle {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    -webkit-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease .5s;
+    cursor: pointer;
+}
+
+#languageToggle>div {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-mask: url(../assets/static/ionicons/language-outline.svg) no-repeat center;
+    mask: url(../assets/static/ionicons/language-outline.svg) no-repeat center;
+    -webkit-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+#languageToggle img {
+    width: 2rem;
+    position: absolute;
+}
+#languageToggle a:nth-of-type(1)>img {
+    top: -120%;
+}
+#languageToggle a:nth-of-type(2)>img {
+    top: -240%;
+}
+
 
 #darkModeToggle {
     position: relative;

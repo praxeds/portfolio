@@ -59,7 +59,8 @@ const toggleDivs = document.querySelectorAll('nav>div>div')
 const menu = document.getElementById('menu')
 const menuLinks = document.querySelectorAll('#menu>div:nth-of-type(1)>ul a')
 const contactMenuLink = document.getElementById('contactMenuLink')
-
+const languageToggle = document.getElementById('languageToggle')
+const languageOptions = document.querySelectorAll('#languageToggle>a')
 
 const darkModeBtn = document.getElementById('darkModeBtn')
 const darkModeToggle = document.getElementById('darkModeToggle')
@@ -92,6 +93,18 @@ const footerIcons = document.querySelectorAll('section:nth-of-type(4) ul>li div'
 const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
 
 
+/*
+
+
+!Events
+
+
+*/
+languageToggle.addEventListener('click', function() {
+    for (let flag of languageOptions) {
+        toggleClass(flag, 'noDisplay')
+    }
+})
 
 /*
 
@@ -100,6 +113,12 @@ const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
 
 
 */
+
+function toggleClass(element, className) {
+    element.classList.toggle(className)
+}
+
+
 function menuAnimation() {
     //?Menu Toggle Position
     toggleDivs[0].classList.toggle('activeNavToggle2')
