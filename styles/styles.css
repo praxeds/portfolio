@@ -903,6 +903,20 @@ footer p {
         height: 3rem;
     }
     
+    #languageToggle {
+        height: 2.8rem;
+        width: 2.8rem;
+    }
+    
+    #languageToggle>div {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    #languageToggle img {
+        width: 2.8rem;
+    }
+
     #darkModeToggle {
         position: relative;
         width: 5.5rem;

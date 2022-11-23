@@ -95,39 +95,49 @@ const contactLinks = document.querySelectorAll('section:nth-of-type(4)>div>p>a')
 
 /*
 
-
 !Events
-
-
 */
-languageToggle.addEventListener('click', function(e) {
+//Back to Top
+navLogo.addEventListener('click', function () {
+    if (menu.classList.contains('activeMenu')) {
+        menuAnimation()
+    }
+})
+navLogo.addEventListener('click', backToTop)
+
+//Opening the menu
+navToggle.addEventListener('click', menuAnimation)
+//Closing the menu
+menuLinks.forEach(link => {
+    link.addEventListener('click', menuAnimation)
+})
+
+languageToggle.addEventListener('click', function (e) {
     e.stopPropagation()
     for (let flag of languageOptions) {
         toggleClass(flag, 'noDisplay')
     }
 })
 
-window.addEventListener('click', function(e){   
+window.addEventListener('click', function (e) {
     if (menu.classList.contains('activeMenu')) {
         for (let flag of languageOptions) {
-            if (e.target !== flag && !flag.classList.contains('noDisplay')){
+            if (e.target !== flag && !flag.classList.contains('noDisplay')) {
                 toggleClass(flag, 'noDisplay')
-            }            
+            }
         }
     }
-  });
+})
+
+darkModeToggle.addEventListener('click', darkModeEvent)
+
 /*
-
-
 !Functions
-
-
 */
 
 function toggleClass(element, className) {
     element.classList.toggle(className)
 }
-
 
 function menuAnimation() {
     //?Menu Toggle Position
@@ -142,68 +152,32 @@ function menuAnimation() {
     }
 }
 
-
-/*
-
-
-!Events
-
-
-*/
-
-
-//!Back to Top
-navLogo.addEventListener('click', function() {
-    if (menu.classList.contains('activeMenu')) {
-        menuAnimation()
-    }
-})
-
-navLogo.addEventListener('click', backToTop)
 function backToTop() {
     fullpage_api.moveTo(1)
 }
 
-
-//!Opening the menu
-navToggle.addEventListener('click', menuAnimation)
-
-//!Closing the menu
-menuLinks.forEach(link => {
-    link.addEventListener('click', menuAnimation)
-})
-
-
-//!Dark Mode
-
-
-darkModeToggle.addEventListener('click', darkModeEvent)
+//*Dark Mode
 function darkModeEvent() {
     lightTextElements.forEach(element => {
-        element.classList.toggle('dark')
-        element.classList.toggle('light')
-    });
-
+        toggleClass(element, 'dark')
+        toggleClass(element, 'light')
+    })
     darkTextElements.forEach(element => {
-        element.classList.toggle('light')
-        element.classList.toggle('dark')
-    });
-
+        toggleClass(element, 'light')
+        toggleClass(element, 'dark')
+    })
     mediumTextElements.forEach(element => {
-        element.classList.toggle('light')
-        element.classList.toggle('medium')
+        toggleClass(element, 'light')
+        toggleClass(element, 'medium')
     })
-
     bgLightElements.forEach(element => {
-        element.classList.toggle('bgLight')
-        element.classList.toggle('bgDark')
+        toggleClass(element, 'bgLight')
+        toggleClass(element, 'bgDark')
     })
-
     bgDarkElements.forEach(element => {
-        element.classList.toggle('bgDark')
-        element.classList.toggle('bgLight')
+        toggleClass(element, 'bgDark')
+        toggleClass(element, 'bgLight')
     })
-
     slideNav.forEach(element => {
         if (element.style.background === "var(--bg-light-color)") {
             element.style.background = "var(--bg-dark-color)"
@@ -211,19 +185,18 @@ function darkModeEvent() {
             element.style.background = "var(--bg-light-color)"
         }
     })
+    toggleClass(darkModeToggle, 'lightModeToggle')
+    toggleClass(darkModeToggle, 'darkModeToggle')
 
-    darkModeToggle.classList.toggle('lightModeToggle')
-    darkModeToggle.classList.toggle('darkModeToggle')
+    toggleClass(darkModeBtn, 'lightModeBtnPosition')
+    toggleClass(darkModeBtn, 'darkModeBtnPosition')
 
-    darkModeBtn.classList.toggle('lightModeBtnPosition')
-    darkModeBtn.classList.toggle('darkModeBtnPosition')
-
-    darkModeBtnIcon.classList.toggle('lightModeBtnIcon')
-    darkModeBtnIcon.classList.toggle('darkModeBtnIcon')
+    toggleClass(darkModeBtnIcon, 'lightModeBtnIcon')
+    toggleClass(darkModeBtnIcon, 'darkModeBtnIcon')
 }
 
-//!Clicking in the contact link in the menu makes the nav change color since it takes the user to the footer
-contactMenuLink.addEventListener('click', function() {
+//Clicking in the contact link in the menu makes the nav change color since it takes the user to the footer
+contactMenuLink.addEventListener('click', function () {
     if (darkModeToggle.classList.contains('lightModeToggle')) {
         navLogo.classList.add('light')
         navLogo.classList.remove('dark')
@@ -244,86 +217,46 @@ contactMenuLink.addEventListener('click', function() {
 //!Hover Styles
 //? Menu Section > Email hover
 for (const link of menuTextLinks) {
-    link.addEventListener('mouseenter', (event) => {
-        if (link.classList.contains('light')) {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        } else {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        }
+    link.addEventListener('mouseenter', (e) => {
+        toggleClass(link, 'light')
+        toggleClass(link, 'dark')
     });
-    link.addEventListener('mouseleave', (event) => {
-        if (link.classList.contains('light')) {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        } else {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        }
-    })    
+    link.addEventListener('mouseleave', (e) => {
+        toggleClass(link, 'light')
+        toggleClass(link, 'dark')
+    })
 }
 //? Menu Section > icons hover
 menuIcons.forEach(icon => {
     icon.addEventListener('mouseenter', (e) => {
-        if (icon.classList.contains('bgLight')) {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        } else {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        }
+        toggleClass(icon, 'bgLight')
+        toggleClass(icon, 'bgDark')
     })
     icon.addEventListener('mouseleave', (e) => {
-        if (icon.classList.contains('bgLight')) {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        } else {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        }
+        toggleClass(icon, 'bgLight')
+        toggleClass(icon, 'bgDark')
     })
 })
 
 //? Last Section > Email hover
-for (const link of contactLinks) {
-    link.addEventListener('mouseenter', (event) => {
-        if (link.classList.contains('light')) {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        } else {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        }
-    });
-    link.addEventListener('mouseleave', (event) => {
-        if (link.classList.contains('light')) {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        } else {
-            link.classList.toggle('light')
-            link.classList.toggle('dark')
-        }
-    })    
+for (let link of contactLinks) {
+    link.addEventListener('mouseenter', (e) => {
+        toggleClass(link, 'light')
+        toggleClass(link, 'dark')
+    })
+    link.addEventListener('mouseleave', (e) => {
+        toggleClass(link, 'light')
+        toggleClass(link, 'dark')
+    })
 }
 //? Last Section > icons hover
 footerIcons.forEach(icon => {
     icon.addEventListener('mouseenter', (e) => {
-        if (icon.classList.contains('bgLight')) {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        } else {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        }
+        toggleClass(icon, 'bgLight')
+        toggleClass(icon, 'bgDark')
     })
     icon.addEventListener('mouseleave', (e) => {
-        if (icon.classList.contains('bgLight')) {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        } else {
-            icon.classList.toggle('bgLight')
-            icon.classList.toggle('bgDark')
-        }
+        toggleClass(icon, 'bgLight')
+        toggleClass(icon, 'bgDark')
     })
 })
