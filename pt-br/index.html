@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Primary Meta Tags -->
     <title>Juliana Praxedes | Desenvolvedora Web Front-End e Designer</title>
-    <meta name="title" content="Juliana Praxedes | Front-End Developer and Designer">
+    <meta name="title" content="Juliana Praxedes | Desenvolvedora Web Front-End e Designer">
     <meta name="description"
-        content="Juliana Praxedes, front-end web developer with a background in arts and design based in Brazil.">
+        content="Juliana Praxedes, Desenvolvedora Web Front-End com formação em artes e design.">
     <meta name="keywords"
-        content="Juliana, Praxedes, Web, developer, software, engineer, front-end, back-end, frontend, backend, fullstack">
+        content="Juliana, Praxedes, Web, desenvolvedora, software, engenheira, front-end, back-end, frontend, backend, fullstack">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
@@ -19,15 +19,15 @@
     <!--Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://julianapraxedes.com/">
-    <meta property="og:title" content="Juliana Praxedes | Front-End Developer and Designer">
+    <meta property="og:title" content="Juliana Praxedes | Desenvolvedora Web Front-End e Designer">
     <meta property="og:description"
-        content="Juliana Praxedes, front-end web developer with a background in arts and design based in Brazil.">
+        content="Juliana Praxedes, Desenvolvedora Web Front-End com formação em artes e design.">
     <!--Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="http://julianapraxedes.com/">
-    <meta property="twitter:title" content="Juliana Praxedes | Front-End Developer and Designer">
+    <meta property="twitter:title" content="Juliana Praxedes | Desenvolvedora Web Front-End e Designer">
     <meta property="twitter:description"
-        content="Juliana Praxedes, front-end web developer with a background in arts and design based in Brazil.">
+        content="Juliana Praxedes, Desenvolvedora Web Front-End com formação em artes e design.">
     <!--!Styles-->
     <link rel="stylesheet" href="../styles/fullpage.min.css">
     <link rel="stylesheet" href="../styles/normalize.css">
@@ -40,14 +40,12 @@
         <span class="accentColor">Juliana</span>
         <span class="dark">Praxedes</span>
     </div> -->
-
-    <nav id="nav">
-        <span id="navLogo" class="dark">A.</span>
-
-        <div id="navToggle">
-            <div class="toggleDiv bgDark"></div>
-            <div class="toggleDiv bgDark"></div>
-            <div class="toggleDiv bgDark"></div>
+    <nav>
+        <span class="dark">A.</span>
+        <div>
+            <div class="bgDark"></div>
+            <div class="bgDark"></div>
+            <div class="bgDark"></div>
         </div>
     </nav>
 
@@ -57,7 +55,7 @@
                 <li><a class="dark" href="#home">início</a></li>
                 <li><a class="dark" href="#about">sobre</a></li>
                 <li><a class="dark" href="#projects">projetos</a></li>
-                <li><a class="dark" href="#contact" id="contactAnchor">contato</a></li>
+                <li><a class="dark" href="#contact" id="contactMenuLink">contato</a></li>
             </ul>
         </div>
 
@@ -95,6 +93,13 @@
                         </a>
                     </li>
                 </ul>
+
+                <div id="languageToggle" class="bgLight">
+                    <div class="bgDark"></div>
+                    <a href="#" class="noDisplay"><img src="../assets/static/flag-brazil_1f1e7-1f1f7.png" alt="Brazil's flag"></a>
+                    <a href="../index.html" class="noDisplay"><img src="../assets/static/flag-united-kingdom_1f1ec-1f1e7.png" alt="United Kingdom's flag"></a>
+                </div>
+
                 <div id="darkModeToggle" class="lightModeToggle">
                     <div id="darkModeBtn" class="bgLight lightModeBtnPosition">
                         <div id="darkModeBtnIcon" class="lightModeBtnIcon"></div>
@@ -105,7 +110,7 @@
     </div>
 
     <main id="fullpage">
-        <section id="home" class="home bgLight section" data-anchor="home">
+        <section class="bgLight section" data-anchor="home">
             <div>
                 <div></div>
                 <div></div>
@@ -113,17 +118,18 @@
             <div class="dark">
                 <h2>Olá!</h2>
                 <h1>Sou Juliana Praxedes, Desenvolvedora Web Front-End com formação em artes e design.</h1>
-                <a alt="My Resume document"
+                <a alt="Meu currículo"
                     href="https://docs.google.com/document/d/1uhyF5eh0lMcrc3hCTfooLpbT7wxxriRPqgQHDxjEENQ/edit?usp=sharing"
                     target="_blank"><button class="light bgAccent">Currículo</button></a>
             </div>
             <div class="bgDark"></div>
         </section>
 
-        <section class="about bgLight section" data-anchor="about">
+        <section class="bgLight section" data-anchor="about">
             <div class="slide">
                 <div>
-                    <img alt="A picture of me, Ana, drinking juice" title="Eu"
+                    <img alt="A picture of me, Ana, drinking juice"
+                        title="me"
                         data-src="../assets/static/profile-pic.png">
                 </div>
 
@@ -167,9 +173,126 @@
             </div>
         </section>
 
-        <section class="projects bgLight section" data-anchor="projects">
+        <section class="bgLight section" data-anchor="projects">
             <div class="slide">
-                <div class="bgProjectLight1">
+                <div>
+                    <video data-autoplay muted loop src="../assets/videos/project7.mp4"></video>
+                </div>
+
+                <div>
+                    <ul class="medium">
+                        <li>html</li>
+                        <li>|</li>
+                        <li>css</li>
+                        <li>|</li>
+                        <li>javascript</li>
+                    </ul>
+                    <h4 class="dark">
+                        Filme Clueless
+                    </h4>
+                    <h4 class="dark">
+                        Closet de Cher
+                    </h4>
+                    <p class="medium">Remake da cena mostrando o closet de Cher, no filme "As Patricinhas de Beverley Hills" de 1995. Feito como parte do desafio semanal "Os anos 90" fornecido pelo Codepen.</p>
+                    <ul class="medium">
+                        <li><a class="medium" href="https://github.com/praxeds/codepen-chers-closet"
+                                target="_blank">Repositório</a></li>
+                        <li>|</li>
+                        <li><a class="medium" href="https://praxeds.github.io/codepen-chers-closet/"
+                                target="_blank">Live</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div>
+                    <video data-autoplay muted loop src="../assets/videos/project5.mp4"></video>
+                </div>
+
+                <div>
+                    <ul class="medium">
+                        <li>html</li>
+                        <li>|</li>
+                        <li>css</li>
+                        <li>|</li>
+                        <li>javascript</li>
+                    </ul>
+                    <h4 class="dark">
+                        Pedra, Papel,
+                    </h4>
+                    <h4 class="dark">
+                        Tesoura
+                    </h4>
+                    <p class="medium">Uma simples implementação do jogo clássico de infância "Pedra papel tesoura" utilizando JavaScript. Parte do currículo de JavaScript fornecido pelo The Odin Project.</p>
+                    <ul class="medium">
+                        <li><a class="medium" href="https://github.com/praxeds/theodinproject-rock-paper-scissors"
+                                target="_blank">Repositório</a></li>
+                        <li>|</li>
+                        <li><a class="medium" href="https://praxeds.github.io/theodinproject-rock-paper-scissors/"
+                                target="_blank">Live</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div>
+                    <video data-autoplay muted loop src="../assets/videos/project4.mp4"></video>
+                </div>
+
+                <div>
+                    <ul class="medium">
+                        <li>html</li>
+                        <li>|</li>
+                        <li>css</li>
+                        <li>|</li>
+                        <li>javascript</li>
+                    </ul>
+                    <h4 class="dark">
+                        Calculadora
+                    </h4>
+                    <p class="medium">Calculadora feita usando Javascript, HTML e CSS. Parte do currículo Foundations de The Odin Project.</p>
+                    <ul class="medium">
+                        <li><a class="medium" href="https://github.com/praxeds/theodinproject-calculator"
+                                target="_blank">Repositório</a></li>
+                        <li>|</li>
+                        <li><a class="medium" href="https://praxeds.github.io/theodinproject-calculator/"
+                                target="_blank">Live</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div>
+                    <video data-autoplay muted loop src="../assets/videos/project6.mp4"></video>
+                </div>
+
+                <div>
+                    <ul class="medium">
+                        <li>html</li>
+                        <li>|</li>
+                        <li>css</li>
+                        <li>|</li>
+                        <li>javascript</li>
+                    </ul>
+                    <h4 class="dark">
+                        Gerador de
+                    </h4>
+                    <h4 class="dark">
+                        Senha
+                    </h4>
+                    <p class="medium">Segundo projeto solo do curso de JavaScript fornecido por Scrimba. Dentre os recursos incluem a capacidade de definir o tamanho da senha, a possibilidade de copiar para a área de transferência ao clicar, opções de caracteres minúsculos, maiúsculos, caracteres especiais e números.</p>
+                    <ul class="medium">
+                        <li><a class="medium" href="https://github.com/praxeds/scrimba-password-generator"
+                                target="_blank">Repositório</a></li>
+                        <li>|</li>
+                        <li><a class="medium" href="https://praxeds.github.io/scrimba-password-generator/"
+                                target="_blank">Live</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div>
                     <video data-autoplay muted loop src="../assets/videos/project1.mp4"></video>
                 </div>
 
@@ -197,70 +320,10 @@
                     </ul>
                 </div>
             </div>
-
-            <div class="slide">
-                <div class="bgProjectLight2">
-                    <video data-autoplay muted loop src="../assets/videos/project2.mp4"></video>
-                </div>
-
-                <div>
-                    <ul class="medium">
-                        <li>figma</li>
-                        <li>|</li>
-                        <li>css</li>
-                        <li>|</li>
-                        <li>bootstrap</li>
-                    </ul>
-                    <h4 class="dark">
-                        Fujifilm Instax
-                    </h4>
-                    <h4 class="dark">
-                        Product Landing Page
-                    </h4>
-                    <p class="medium">Primeiro site que construí com base no conceito de Mobile First Design. Também foi o primeiro
-                        projeto no qual dediquei um tempo em especial para criar um protótipo usando Figma. Desenvolvido para ser totalmente responsivo com a ajuda do Bootstrap</p>
-                    <ul class="medium">
-                        <li><a class="medium" href="https://github.com/praxeds/freecodecamp-product-landing-page"
-                                target="_blank">Repositório</a></li>
-                        <li>|</li>
-                        <li><a class="medium" href="https://praxeds.github.io/freecodecamp-product-landing-page/"
-                                target="_blank">Live</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="slide">
-                <div class="bgProjectLight3">
-                    <video data-autoplay muted loop src="../assets/videos/project3.mp4"></video>
-                </div>
-
-                <div>
-                    <ul class="medium">
-                        <li>html</li>
-                        <li>|</li>
-                        <li>css</li>
-                        <li>|</li>
-                        <li>Pure.css</li>
-                    </ul>
-                    <h4 class="dark">
-                        Aris Beauty
-                    </h4>
-                    <h4 class="dark">
-                        Skincare Survey
-                    </h4>
-                    <p class="medium">Primeiro projeto de certificação do curso Design responsivo para a web oferecido por freeCodeCamp. Construído usando o framework de CSS Pure.css</p>
-                    <ul class="medium">
-                        <li><a class="medium" href="https://github.com/praxeds/freecodecamp-survey-form"
-                                target="_blank">Repositório</a></li>
-                        <li>|</li>
-                        <li><a class="medium" href="https://praxeds.github.io/freecodecamp-survey-form/"
-                                target="_blank">Live</a></li>
-                    </ul>
-                </div>
-            </div>
+            
         </section>
 
-        <section class="contact bgAccent light section" data-anchor="contact">
+        <section class="bgAccent light section" data-anchor="contact">
             <div>
                 <h3>Vamos Conversar!</h3>
                 <p>Tenho disposição em trabalhar com projetos freelance. Caso tenha alguma ideia em mente, você pode
