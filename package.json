@@ -1,0 +1,24 @@
+{
+  "name": "juliana-praxedes-portfolio",
+  "version": "1.0.0",
+  "description": "Juliana Praxedes Portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praxeds/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/praxeds/portfolio/issues"
+  },
+  "homepage": "https://github.com/praxeds/portfolio#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
